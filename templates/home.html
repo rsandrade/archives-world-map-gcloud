@@ -31,33 +31,33 @@
       <div class="collapse navbar-collapse" id="navbarsMap">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./">{{ @dict_home }}<check if="{{ @page=='home' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="/">{{ @dict_home }}<check if="{{ @page=='home' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./add">{{ @dict_addarchives }}<check if="{{ @page=='add' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="/add">{{ @dict_addarchives }}<check if="{{ @page=='add' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./stats">{{ @dict_stats }}<check if="{{ @page=='stats' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="/stats">{{ @dict_stats }}<check if="{{ @page=='stats' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about">{{ @dict_about }}<check if="{{ @page=='about' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="/about">{{ @dict_about }}<check if="{{ @page=='about' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your Acccount</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="./register">Register</a>
+              <a class="dropdown-item" href="/register">Register</a>
               <check if="{{ @SESSION.logged!='yes' }}">
-              <a class="dropdown-item" href="./login">Sign in</a>
+              <a class="dropdown-item" href="/login">Sign in</a>
               </check>
               <check if="{{ @SESSION.logged=='yes' }}">
-              <a class="dropdown-item" href="./logout">Logout</a>
+              <a class="dropdown-item" href="/logout">Logout</a>
               </check>
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" method="GET" action="./q">
+        <form class="form-inline my-2 my-lg-0" method="GET" action="/q">
           <input class="form-control mr-sm-2" type="text" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{ @dict_search }}</button>
         </form>
       </div>
     </nav>

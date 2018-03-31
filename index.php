@@ -5,15 +5,24 @@ require_once('vendor/autoload.php');
 // Fat-free
 $f3 = Base::instance();
 
+// ======================
+// Language selector
+// ======================
+
+if($f3->get('GET.language')){
+  setcookie('language', $f3->get('GET.language'));
+  header('Location: '.$_SERVER['HTTP_REFERER']);
+}
+
 // Env vars
 require('config.php');
 
 // Fat-free vars
 $f3->set('TEMP', $f3->get('AWM_GCLOUD_BUCKET'));
-$f3->set('DEBUG', 0); // 0 = production; 3 = debug mode
+$f3->set('DEBUG', 3); // 0 = production; 3 = debug mode
 $f3->set('CACHE', 'memcached=localhost:11211');
 $f3->set('TZ','America/Bahia');
-$f3->set('LOCALES','dict/');
+$f3->set('LOCALES','./dict/');
 $f3->set('LANGUAGE', $_COOKIE['language']);
 $f3->set('FALLBACK','en-US');
 
@@ -26,15 +35,7 @@ use Google\Cloud\Datastore\DatastoreClient;
 $f3->set('datastore', new DatastoreClient([
     'projectId' => $f3->get('AWM_DATASTORE_PROJECTID')
 ]));
-
-// ======================
-// Language selector
-// ======================
-if($f3->get('GET.language')){
-	setcookie('language', $f3->get('GET.language'));
-	header('Location: '.$_SERVER['HTTP_REFERER']);  
-}
-
+  
 // ======================
 // App
 // ======================
