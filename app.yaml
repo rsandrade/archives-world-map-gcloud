@@ -1,0 +1,12 @@
+runtime: php55
+env: standard
+
+handlers: 
+- url: /templates/css
+  static_dir: templates/css
+  
+- url: /flags
+  static_dir: flags
+  
+- url: /.*
+  script: index.php
