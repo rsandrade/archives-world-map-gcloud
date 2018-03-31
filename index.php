@@ -97,6 +97,9 @@ $f3->route('GET /stats',
   function($f3) {
     $f3->set('page','stats');
 
+    // 
+    
+    
     echo \Template::instance()->render('templates/home.html');
   }
 );
@@ -107,6 +110,15 @@ $f3->route('GET /about',
 
     echo \Template::instance()->render('templates/home.html');
   }
+);
+
+$f3->route('GET /info/@id',
+   function($f3) {
+      $f3->set('page','info');
+	  
+	  	  
+	  echo \Template::instance()->render('etc/templates/default.html');
+   }
 );
 
 $f3->route('GET /login',
