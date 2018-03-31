@@ -26,7 +26,15 @@ use Google\Cloud\Datastore\DatastoreClient;
 $f3->set('datastore', new DatastoreClient([
     'projectId' => $f3->get('AWM_DATASTORE_PROJECTID')
 ]));
-   
+
+// ======================
+// Language selector
+// ======================
+if($f3->get('GET.language')){
+	setcookie('language', $f3->get('GET.language'));
+	header('Location: '.$_SERVER['HTTP_REFERER']);  
+}
+
 // ======================
 // App
 // ======================

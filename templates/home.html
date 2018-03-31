@@ -31,16 +31,16 @@
       <div class="collapse navbar-collapse" id="navbarsMap">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="./">Home<check if="{{ @page=='home' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="./">{{ @dict_home }}<check if="{{ @page=='home' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./add">Add institution<check if="{{ @page=='add' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="./add">{{ @dict_addarchives }}<check if="{{ @page=='add' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./stats">Stats<check if="{{ @page=='stats' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="./stats">{{ @dict_stats }}<check if="{{ @page=='stats' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./about">About<check if="{{ @page=='about' }}"><span class="sr-only">(current)</span></check></a>
+            <a class="nav-link" href="./about">{{ @dict_about }}<check if="{{ @page=='about' }}"><span class="sr-only">(current)</span></check></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Your Acccount</a>
