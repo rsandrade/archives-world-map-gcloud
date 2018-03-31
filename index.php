@@ -90,7 +90,22 @@ $f3->route('POST /proc-add',
     $f3->get('datastore')->insert($institution);
     
     echo \Template::instance()->render('templates/home.html');
-    
+  }
+);
+
+$f3->route('GET /stats',
+  function($f3) {
+    $f3->set('page','stats');
+
+    echo \Template::instance()->render('templates/home.html');
+  }
+);
+
+$f3->route('GET /about',
+  function($f3) {
+    $f3->set('page','about');
+
+    echo \Template::instance()->render('templates/home.html');
   }
 );
 
